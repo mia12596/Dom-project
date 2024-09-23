@@ -49,6 +49,8 @@ donationButton.addEventListener('click', function () {
     // Change History button to inactive (gray)
     historyButton.classList.remove('bg-[rgb(180,240,97)]');
     historyButton.classList.add('bg-gray-200');
+    document.getElementById('hidden').classList.remove('hidden');
+
 
 });
 
@@ -63,6 +65,15 @@ historyButton.addEventListener('click', function () {
     donationButton.classList.add('bg-gray-200');
     document.getElementById('hidden').classList.add('hidden');
 
+
+    const historyIcon = document.createElement('div');
+    historyIcon.className =
+        "bg-white  p-3 rounded-md border-2 border-indigo-300";
+    historyIcon.innerHTML = `
+    <p>jjjjjjjjjjjjjjjjj</p>
+    `
+    const historySection = document.getElementById(' history-section');
+    historySection.insertBefore(historyIcon, historySection.firstChild);
 });
 
 
