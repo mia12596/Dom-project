@@ -1,61 +1,68 @@
+// document.getElementById('donate-button').addEventListener('click', function () {
+//     const z1 = document.getElementById('bank').innerText;
+//     const h1 = parseFloat(z1)
+//     const a = document.getElementById('amount').value;
+//     const d = parseFloat(a);
+//     const b = document.getElementById('total').innerText;
+//     const c = parseFloat(b);
+//     const sum = d + c;
+//     const b1 = h1 + sum;
+//     document.getElementById('total').innerText = sum;
+//     document.getElementById('bank').innerText = b1;
+
+// })
 document.getElementById('donate-button').addEventListener('click', function () {
     const z1 = document.getElementById('bank').innerText;
-    const h1 = parseFloat(z1)
+    const h1 = parseFloat(z1);
     const a = document.getElementById('amount').value;
     const d = parseFloat(a);
     const b = document.getElementById('total').innerText;
     const c = parseFloat(b);
     const sum = d + c;
     const b1 = h1 + sum;
+
     document.getElementById('total').innerText = sum;
     document.getElementById('bank').innerText = b1;
 
-})
-document.getElementById('donate-buttonn').addEventListener('click', function () {
-    const e = document.getElementById('amountt').value;
-    const f = parseFloat(e);
-    const p = document.getElementById('totall').innerText;
-    const x = parseFloat(p);
-    const output = f + x;
+    // Show the popup modal
+    document.getElementById('popup-modal').classList.remove('hidden');
+});
 
-    document.getElementById('totall').innerText = output;
+// Close the popup modal when the 'Close' button is clicked
+document.getElementById('close-popup').addEventListener('click', function () {
+    document.getElementById('popup-modal').classList.add('hidden');
+});
 
 
-})
-document.getElementById('donate-buttonnn').addEventListener('click', function () {
-    const m = document.getElementById('amounttt').value;
-    const o = parseFloat(m);
-    const c = document.getElementById('totalll').innerText;
-    const z = parseFloat(c);
-    const result = o + z;
 
-    document.getElementById('totalll').innerText = result;
-})
 
-const history = document.getElementById('history');
-history.addEventListener('click', function () {
-    history.classList.add(
-        'bg-green-300',
-        'font-bold',
-        'rounded-md',
+// Get the donation and history buttons
+const donationButton = document.getElementById('donation');
+const historyButton = document.getElementById('history');
 
-    );
-    document.getElementById('history-section').classList.remove('hidden')
-})
-const p = document.createElement('p');
-p.innerText = 'ok fine'
+// Event listener for Donation button
+donationButton.addEventListener('click', function () {
+    // Change Donation button to active (green)
+    donationButton.classList.remove('bg-gray-200');
+    donationButton.classList.add('bg-[rgb(180,240,97)]');
 
-document.getElementById('history-section').appendChild(p);
-const donation = document.getElementById('donation');
-donation.addEventListener('click', function () {
-    donation.classList.remove(
-        'bg-green-300',
-        'font-bold',
-        'rounded-md',
+    // Change History button to inactive (gray)
+    historyButton.classList.remove('bg-[rgb(180,240,97)]');
+    historyButton.classList.add('bg-gray-200');
 
-    );
-    document.getElementById('hidden').remove('hidden')
+});
 
-})
+// Event listener for History button
+historyButton.addEventListener('click', function () {
+    // Change History button to active (green)
+    historyButton.classList.remove('bg-gray-200');
+    historyButton.classList.add('bg-[rgb(180,240,97)]');
+
+    // Change Donation button to inactive (gray)
+    donationButton.classList.remove('bg-[rgb(180,240,97)]');
+    donationButton.classList.add('bg-gray-200');
+    document.getElementById('hidden').classList.add('hidden');
+
+});
 
 
