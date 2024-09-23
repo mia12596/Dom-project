@@ -1,31 +1,19 @@
-// document.getElementById('donate-button').addEventListener('click', function () {
-//     const z1 = document.getElementById('bank').innerText;
-//     const h1 = parseFloat(z1)
-//     const a = document.getElementById('amount').value;
-//     const d = parseFloat(a);
-//     const b = document.getElementById('total').innerText;
-//     const c = parseFloat(b);
-//     const sum = d + c;
-//     const b1 = h1 + sum;
-//     document.getElementById('total').innerText = sum;
-//     document.getElementById('bank').innerText = b1;
-
-// })
 document.getElementById('donate-button').addEventListener('click', function () {
-    const z1 = document.getElementById('bank').innerText;
-    const h1 = parseFloat(z1);
+    const z = document.getElementById('bank').innerText;
+    const h = parseFloat(z);
     const a = document.getElementById('amount').value;
     const d = parseFloat(a);
     const b = document.getElementById('total').innerText;
     const c = parseFloat(b);
     const sum = d + c;
-    const b1 = h1 + sum;
+    const v = h + sum;
 
     document.getElementById('total').innerText = sum;
-    document.getElementById('bank').innerText = b1;
+    document.getElementById('bank').innerText = v;
 
     // Show the popup modal
     document.getElementById('popup-modal').classList.remove('hidden');
+
 });
 
 // Close the popup modal when the 'Close' button is clicked
@@ -64,16 +52,14 @@ historyButton.addEventListener('click', function () {
     donationButton.classList.remove('bg-[rgb(180,240,97)]');
     donationButton.classList.add('bg-gray-200');
     document.getElementById('hidden').classList.add('hidden');
+    const historyList = document.getElementById('donation-history');
+    const newEntry = document.createElement('li');
+    newEntry.textContent = `Donated  to Noakhali flood relief.`;
+    historyList.appendChild(newEntry);
 
 
-    const historyIcon = document.createElement('div');
-    historyIcon.className =
-        "bg-white  p-3 rounded-md border-2 border-indigo-300";
-    historyIcon.innerHTML = `
-    <p>jjjjjjjjjjjjjjjjj</p>
-    `
-    const historySection = document.getElementById(' history-section');
-    historySection.insertBefore(historyIcon, historySection.firstChild);
+
 });
+
 
 
